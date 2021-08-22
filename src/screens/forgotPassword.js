@@ -1,8 +1,23 @@
-import React from "react";
-import { View } from "react-native";
+import React from 'react';
+import {useState} from 'react';
+import {Button, View} from 'react-native';
+import CustomInput from '../component/customInput';
 
 function ForgotPassword(props) {
-  return <View></View>;
+  const [mobileNo, setMobielNo] = useState();
+  return (
+    <View>
+      <CustomInput
+        onChange={value => setMobielNo(value)}
+        value={mobileNo}
+        placeholder="Mobile Number"
+      />
+      <Button
+        title="submit"
+        onPress={() => props.navigation.navigate('ChangePassword')}
+      />
+    </View>
+  );
 }
 
 export default ForgotPassword;

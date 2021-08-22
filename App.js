@@ -5,11 +5,11 @@ import Dashboard from './src/screens/dashboard';
 import Login from './src/screens/login';
 
 export default function App() {
-  const [isLogin, setIslogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
   return (
-    <MainContext.Provider value={{isLogin}}>
+    <MainContext.Provider value={{isLogin, setIsLogin}}>
       <NavigationContainer>
-        {false ? <Dashboard /> : <Login />}
+        {isLogin ? <Dashboard /> : <Login />}
       </NavigationContainer>
     </MainContext.Provider>
   );
